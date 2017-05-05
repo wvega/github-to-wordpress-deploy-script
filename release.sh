@@ -30,6 +30,12 @@ GITHUB_REPO_OWNER=${GITHUB_REPO_OWNER-username}
 # GITHUB Repository name
 GITHUB_REPO_NAME=${GITHUB_REPO_NAME-repo-name}
 
+# WordPress Username
+WP_ORG_USERNAME=${WP_ORG_USERNAME-username}
+
+# WordPress Password
+WP_ORG_PASSWORD=${WP_ORG_PASSWORD-password}
+
 # ----- STOP EDITING HERE -----
 
 set -e
