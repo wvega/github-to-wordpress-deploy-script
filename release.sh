@@ -131,6 +131,13 @@ echo "Updating SVN"
 svn update --set-depth immediates tags || { echo "Unable to update empty tags directories."; exit 1; }
 svn update --set-depth infinity trunk || { echo "Unable to update trunk directory."; exit 1; }
 
+# DELETE ASSETS
+echo "Replacing assets"
+rm -Rf assets/
+
+# COPY GIT DIR TO ASSETS
+cp -R $ROOT_PATH$TEMP_GITHUB_REPO"/assets" assets/
+
 # DELETE TRUNK
 echo "Replacing trunk"
 rm -Rf trunk/
