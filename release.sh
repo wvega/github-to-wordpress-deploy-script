@@ -73,7 +73,7 @@ rm -Rf $ROOT_PATH$TEMP_GITHUB_REPO
 if [[ ! -d $TEMP_SVN_REPO ]];
 then
 	echo "Checking out WordPress.org plugin repository"
-	svn checkout $SVN_REPO $TEMP_SVN_REPO || { echo "Unable to checkout repo."; exit 1; }
+	svn checkout --non-recursive $SVN_REPO $TEMP_SVN_REPO || { echo "Unable to checkout repo."; exit 1; }
 fi
 
 # CLONE GIT DIR
@@ -128,7 +128,8 @@ cd $ROOT_PATH$TEMP_SVN_REPO
 
 # UPDATE SVN
 echo "Updating SVN"
-svn update || { echo "Unable to update SVN."; exit 1; }
+svn update --set-depth immediates tags || { echo "Unable to update empty tags directories."; exit 1; }
+svn update --set-depth infinity trunk || { echo "Unable to update trunk directory."; exit 1; }
 
 # DELETE TRUNK
 echo "Replacing trunk"
