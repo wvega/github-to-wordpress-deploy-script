@@ -143,7 +143,7 @@ echo "Replacing trunk"
 rm -Rf trunk/
 
 # COPY GIT DIR TO TRUNK
-cp -R $ROOT_PATH$TEMP_GITHUB_REPO trunk/
+cp -R $ROOT_PATH$TEMP_GITHUB_REPO"/"$PLUGIN_SLUG trunk/
 
 # DO THE ADD ALL NOT KNOWN FILES UNIX COMMAND
 svn add --force * --auto-props --parents --depth infinity -q
