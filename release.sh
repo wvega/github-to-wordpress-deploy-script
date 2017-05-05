@@ -19,16 +19,16 @@
 # ----- START EDITING HERE -----
 
 # THE GITHUB ACCESS TOKEN, GENERATE ONE AT: https://github.com/settings/tokens
-GITHUB_ACCESS_TOKEN="TOKEN"
+GITHUB_ACCESS_TOKEN=${GITHUB_ACCESS_TOKEN-token}
 
 # The slug of your WordPress.org plugin
-PLUGIN_SLUG="your-slug-here"
+PLUGIN_SLUG=${PLUGIN_SLUG-your-slug-here}
 
 # GITHUB user who owns the repo
-GITHUB_REPO_OWNER="username"
+GITHUB_REPO_OWNER=${GITHUB_REPO_OWNER-username}
 
 # GITHUB Repository name
-GITHUB_REPO_NAME="repo-name"
+GITHUB_REPO_NAME=${GITHUB_REPO_NAME-repo-name}
 
 # ----- STOP EDITING HERE -----
 
